@@ -1,11 +1,11 @@
-﻿using System;
+﻿using RegexMASProviderLib.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-using RegexMASProviderLib.Common;
 
 namespace RegexMASProviderLib.Models
 {
@@ -96,7 +96,7 @@ namespace RegexMASProviderLib.Models
                     }
 
                     results.AddRange(from Match match in Regex.Matches(text, pattern.RegexPattern)
-                        select Utils.WideToNarrow(match.Result(pattern.ReplacePattern)));
+                                     select Utils.WideToNarrow(match.Result(pattern.ReplacePattern)));
                 }
             }
             return results.Select(e => e).Distinct().ToList();
@@ -160,7 +160,7 @@ namespace RegexMASProviderLib.Models
             public string NewSourceText { get; set; }
         }
 
-        private FinalRegex  ConstructFinalRegex(Regex sourceRegex, Match match, IntermediateRegex intermediateRegex)
+        private FinalRegex ConstructFinalRegex(Regex sourceRegex, Match match, IntermediateRegex intermediateRegex)
         {
             var entireValue = match.Value;
             var finalMatchPattern = intermediateRegex.NumberedFindPattern;
@@ -221,9 +221,10 @@ namespace RegexMASProviderLib.Models
         }
 
 
-        private IntermediateRegex ConstructIntermediateRegex(IEnumerable< Variable> variables, string basedPattern)
+        private IntermediateRegex ConstructIntermediateRegex(IEnumerable<Variable> variables, string basedPattern)
         {
-            var intermediateRegex = new IntermediateRegex{
+            var intermediateRegex = new IntermediateRegex
+            {
                 ConcatenatedFindPattern = basedPattern,
                 NumberedFindPattern = basedPattern,
                 VariableMap = new Dictionary<string, Variable>()

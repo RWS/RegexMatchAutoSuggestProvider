@@ -100,8 +100,9 @@
             this.regexPatternsDataGridView.Location = new System.Drawing.Point(3, 3);
             this.regexPatternsDataGridView.Name = "regexPatternsDataGridView";
             this.regexPatternsDataGridView.RowTemplate.Height = 21;
-            this.regexPatternsDataGridView.Size = new System.Drawing.Size(1105, 554);
+            this.regexPatternsDataGridView.Size = new System.Drawing.Size(1105, 564);
             this.regexPatternsDataGridView.TabIndex = 0;
+            this.regexPatternsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.regexPatternsDataGridView_CellContentClick);
             this.regexPatternsDataGridView.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.regexPatternsDataGridView_PreviewKeyDown);
             // 
             // isEnabledDataGridViewCheckBoxColumn
@@ -111,7 +112,7 @@
             this.isEnabledDataGridViewCheckBoxColumn.Frozen = true;
             this.isEnabledDataGridViewCheckBoxColumn.HeaderText = "Enabled";
             this.isEnabledDataGridViewCheckBoxColumn.Name = "isEnabledDataGridViewCheckBoxColumn";
-            this.isEnabledDataGridViewCheckBoxColumn.Width = 81;
+            this.isEnabledDataGridViewCheckBoxColumn.Width = 55;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
@@ -151,10 +152,10 @@
             // regexEntriesPage
             // 
             this.regexEntriesPage.Controls.Add(this.regexPatternsDataGridView);
-            this.regexEntriesPage.Location = new System.Drawing.Point(4, 34);
+            this.regexEntriesPage.Location = new System.Drawing.Point(4, 24);
             this.regexEntriesPage.Name = "regexEntriesPage";
             this.regexEntriesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.regexEntriesPage.Size = new System.Drawing.Size(1111, 560);
+            this.regexEntriesPage.Size = new System.Drawing.Size(1111, 570);
             this.regexEntriesPage.TabIndex = 0;
             this.regexEntriesPage.Text = "Regex Entries";
             this.regexEntriesPage.UseVisualStyleBackColor = true;
@@ -162,10 +163,10 @@
             // variablesPage
             // 
             this.variablesPage.Controls.Add(this.variablesSplitContainer);
-            this.variablesPage.Location = new System.Drawing.Point(4, 34);
+            this.variablesPage.Location = new System.Drawing.Point(4, 24);
             this.variablesPage.Name = "variablesPage";
             this.variablesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.variablesPage.Size = new System.Drawing.Size(1111, 560);
+            this.variablesPage.Size = new System.Drawing.Size(1111, 570);
             this.variablesPage.TabIndex = 1;
             this.variablesPage.Text = "Variables";
             this.variablesPage.UseVisualStyleBackColor = true;
@@ -183,7 +184,7 @@
             // variablesSplitContainer.Panel2
             // 
             this.variablesSplitContainer.Panel2.Controls.Add(this.translationPairsDataGridView);
-            this.variablesSplitContainer.Size = new System.Drawing.Size(1105, 554);
+            this.variablesSplitContainer.Size = new System.Drawing.Size(1105, 564);
             this.variablesSplitContainer.SplitterDistance = 368;
             this.variablesSplitContainer.TabIndex = 0;
             // 
@@ -200,7 +201,7 @@
             this.variablesDataGridView.Location = new System.Drawing.Point(0, 0);
             this.variablesDataGridView.Name = "variablesDataGridView";
             this.variablesDataGridView.RowTemplate.Height = 21;
-            this.variablesDataGridView.Size = new System.Drawing.Size(368, 554);
+            this.variablesDataGridView.Size = new System.Drawing.Size(368, 564);
             this.variablesDataGridView.TabIndex = 0;
             this.variablesDataGridView.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.variablesDataGridView_PreviewKeyDown);
             // 
@@ -211,7 +212,7 @@
             this.isEnabledDataGridViewCheckBoxColumn1.Frozen = true;
             this.isEnabledDataGridViewCheckBoxColumn1.HeaderText = "Enabled";
             this.isEnabledDataGridViewCheckBoxColumn1.Name = "isEnabledDataGridViewCheckBoxColumn1";
-            this.isEnabledDataGridViewCheckBoxColumn1.Width = 81;
+            this.isEnabledDataGridViewCheckBoxColumn1.Width = 55;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -237,7 +238,7 @@
             this.translationPairsDataGridView.Location = new System.Drawing.Point(0, 0);
             this.translationPairsDataGridView.Name = "translationPairsDataGridView";
             this.translationPairsDataGridView.RowTemplate.Height = 21;
-            this.translationPairsDataGridView.Size = new System.Drawing.Size(733, 554);
+            this.translationPairsDataGridView.Size = new System.Drawing.Size(733, 564);
             this.translationPairsDataGridView.TabIndex = 0;
             this.translationPairsDataGridView.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.translationPairsDataGridView_PreviewKeyDown);
             // 
@@ -261,10 +262,10 @@
             // regexTesterPage
             // 
             this.regexTesterPage.Controls.Add(this.regexTesterSplitContainer);
-            this.regexTesterPage.Location = new System.Drawing.Point(4, 34);
+            this.regexTesterPage.Location = new System.Drawing.Point(4, 24);
             this.regexTesterPage.Name = "regexTesterPage";
             this.regexTesterPage.Padding = new System.Windows.Forms.Padding(3);
-            this.regexTesterPage.Size = new System.Drawing.Size(1111, 560);
+            this.regexTesterPage.Size = new System.Drawing.Size(1111, 570);
             this.regexTesterPage.TabIndex = 2;
             this.regexTesterPage.Text = "Regex Tester";
             this.regexTesterPage.UseVisualStyleBackColor = true;
@@ -283,8 +284,8 @@
             // regexTesterSplitContainer.Panel2
             // 
             this.regexTesterSplitContainer.Panel2.Controls.Add(this.evaluationPopupWindow);
-            this.regexTesterSplitContainer.Size = new System.Drawing.Size(1105, 554);
-            this.regexTesterSplitContainer.SplitterDistance = 201;
+            this.regexTesterSplitContainer.Size = new System.Drawing.Size(1105, 564);
+            this.regexTesterSplitContainer.SplitterDistance = 204;
             this.regexTesterSplitContainer.SplitterWidth = 8;
             this.regexTesterSplitContainer.TabIndex = 0;
             // 
@@ -300,7 +301,7 @@
             this.regexTesterTableLayoutPanel.Name = "regexTesterTableLayoutPanel";
             this.regexTesterTableLayoutPanel.RowCount = 1;
             this.regexTesterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.regexTesterTableLayoutPanel.Size = new System.Drawing.Size(1105, 201);
+            this.regexTesterTableLayoutPanel.Size = new System.Drawing.Size(1105, 204);
             this.regexTesterTableLayoutPanel.TabIndex = 0;
             // 
             // sourceTextBox
@@ -310,7 +311,7 @@
             this.sourceTextBox.Multiline = true;
             this.sourceTextBox.Name = "sourceTextBox";
             this.sourceTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.sourceTextBox.Size = new System.Drawing.Size(893, 195);
+            this.sourceTextBox.Size = new System.Drawing.Size(893, 198);
             this.sourceTextBox.TabIndex = 0;
             // 
             // regexTesterButtonsTableLayoutPanel
@@ -326,7 +327,7 @@
             this.regexTesterButtonsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.regexTesterButtonsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.regexTesterButtonsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.regexTesterButtonsTableLayoutPanel.Size = new System.Drawing.Size(200, 195);
+            this.regexTesterButtonsTableLayoutPanel.Size = new System.Drawing.Size(200, 198);
             this.regexTesterButtonsTableLayoutPanel.TabIndex = 1;
             // 
             // testButton
@@ -362,7 +363,7 @@
             this.evaluationPopupWindow.Location = new System.Drawing.Point(0, 0);
             this.evaluationPopupWindow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.evaluationPopupWindow.Name = "evaluationPopupWindow";
-            this.evaluationPopupWindow.Size = new System.Drawing.Size(1105, 345);
+            this.evaluationPopupWindow.Size = new System.Drawing.Size(1105, 352);
             this.evaluationPopupWindow.TabIndex = 0;
             // 
             // regexContextMenuStrip
@@ -372,12 +373,12 @@
             this.enableSelectedRegexEntriesToolStripMenuItem,
             this.disableSelectedRegexEntriesToolStripMenuItem});
             this.regexContextMenuStrip.Name = "regexContextMenuStrip";
-            this.regexContextMenuStrip.Size = new System.Drawing.Size(269, 64);
+            this.regexContextMenuStrip.Size = new System.Drawing.Size(197, 48);
             // 
             // enableSelectedRegexEntriesToolStripMenuItem
             // 
             this.enableSelectedRegexEntriesToolStripMenuItem.Name = "enableSelectedRegexEntriesToolStripMenuItem";
-            this.enableSelectedRegexEntriesToolStripMenuItem.Size = new System.Drawing.Size(268, 30);
+            this.enableSelectedRegexEntriesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.enableSelectedRegexEntriesToolStripMenuItem.Tag = "";
             this.enableSelectedRegexEntriesToolStripMenuItem.Text = "Enable selected entries";
             this.enableSelectedRegexEntriesToolStripMenuItem.Click += new System.EventHandler(this.enableSelectedRegexEntriesToolStripMenuItem_Click);
@@ -385,7 +386,7 @@
             // disableSelectedRegexEntriesToolStripMenuItem
             // 
             this.disableSelectedRegexEntriesToolStripMenuItem.Name = "disableSelectedRegexEntriesToolStripMenuItem";
-            this.disableSelectedRegexEntriesToolStripMenuItem.Size = new System.Drawing.Size(268, 30);
+            this.disableSelectedRegexEntriesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.disableSelectedRegexEntriesToolStripMenuItem.Tag = "";
             this.disableSelectedRegexEntriesToolStripMenuItem.Text = "Disable selected entries";
             this.disableSelectedRegexEntriesToolStripMenuItem.Click += new System.EventHandler(this.enableSelectedRegexEntriesToolStripMenuItem_Click);
@@ -397,25 +398,25 @@
             this.enableSelectedVariableEntriesToolStripMenuItem,
             this.disableSelectedVariableEntriesToolStripMenuItem});
             this.variableContextMenuStrip.Name = "variableContextMenuStrip";
-            this.variableContextMenuStrip.Size = new System.Drawing.Size(269, 64);
+            this.variableContextMenuStrip.Size = new System.Drawing.Size(197, 48);
             // 
             // enableSelectedVariableEntriesToolStripMenuItem
             // 
             this.enableSelectedVariableEntriesToolStripMenuItem.Name = "enableSelectedVariableEntriesToolStripMenuItem";
-            this.enableSelectedVariableEntriesToolStripMenuItem.Size = new System.Drawing.Size(268, 30);
+            this.enableSelectedVariableEntriesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.enableSelectedVariableEntriesToolStripMenuItem.Text = "Enable selected entries";
             this.enableSelectedVariableEntriesToolStripMenuItem.Click += new System.EventHandler(this.enableSelectedVariableEntriesToolStripMenuItem_Click);
             // 
             // disableSelectedVariableEntriesToolStripMenuItem
             // 
             this.disableSelectedVariableEntriesToolStripMenuItem.Name = "disableSelectedVariableEntriesToolStripMenuItem";
-            this.disableSelectedVariableEntriesToolStripMenuItem.Size = new System.Drawing.Size(268, 30);
+            this.disableSelectedVariableEntriesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.disableSelectedVariableEntriesToolStripMenuItem.Text = "Disable selected entries";
             this.disableSelectedVariableEntriesToolStripMenuItem.Click += new System.EventHandler(this.enableSelectedVariableEntriesToolStripMenuItem_Click);
             // 
             // RegexDataGridView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainTabControl);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

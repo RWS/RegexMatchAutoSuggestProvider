@@ -1,20 +1,20 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using RegexMASProviderLib.Models;
+﻿using RegexMASProviderLib.Models;
 using RegexMASProviderLib.View;
 using Sdl.Desktop.IntegrationApi;
 using Sdl.Desktop.IntegrationApi.Extensions;
 using Sdl.FileTypeSupport.Framework.BilingualApi;
 using Sdl.TranslationStudioAutomation.IntegrationApi;
 using Sdl.TranslationStudioAutomation.IntegrationApi.Presentation.DefaultLocations;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Capybara.EditorPlugin.RegexMASProvider
 {
-    [Action("SuggestionsPopupWindowAction", typeof (EditorController), Name = "SuggestionsPopupWindowAction_Name",
+    [Action("SuggestionsPopupWindowAction", typeof(EditorController), Name = "SuggestionsPopupWindowAction_Name",
         Description = "SuggestionsPopupWindowAction_Description", Icon = "RegexMASProvider_Icon")]
-    [ActionLayout(typeof (TranslationStudioDefaultContextMenus.EditorDocumentContextMenuLocation), 1, DisplayType.Large)
+    [ActionLayout(typeof(TranslationStudioDefaultContextMenus.EditorDocumentContextMenuLocation), 1, DisplayType.Large)
     ]
     [Shortcut(Keys.Control | Keys.Shift | Keys.F12)]
     public class SuggestionsPopupWindowAction : AbstractViewControllerAction<EditorController>
@@ -109,7 +109,7 @@ namespace Capybara.EditorPlugin.RegexMASProvider
                     //        .OrderByDescending(s => s.Length));
                     return regexPatternEntries.GetAutoSuggestEntries(text, variables);
                 })
-                .ContinueWith(task => 
+                .ContinueWith(task =>
                 {
                     if (task.Result.Count > 0)
                     {

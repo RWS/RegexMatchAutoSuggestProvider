@@ -1,7 +1,7 @@
-﻿using System.ComponentModel;
+﻿using RegexMASProviderLib.Common;
+using System.ComponentModel;
 using System.Linq;
 using System.Text.RegularExpressions;
-using RegexMASProviderLib.Common;
 
 namespace RegexMASProviderLib.Models
 {

@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using RegexMASProviderLib.Models;
+﻿using RegexMASProviderLib.Models;
+using System.Collections.Generic;
 
 namespace RegexMASProviderLib.View
 {
@@ -15,6 +15,6 @@ namespace RegexMASProviderLib.View
             AutoSuggestEntries = new List<AutoSuggestEntry>(autoSuggestEntries);
         }
 
-        public List<AutoSuggestEntry> AutoSuggestEntries { get; set; } 
+        public List<AutoSuggestEntry> AutoSuggestEntries { get; set; }
     }
 }

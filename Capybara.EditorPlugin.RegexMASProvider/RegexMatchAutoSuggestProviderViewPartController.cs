@@ -1,13 +1,12 @@
-﻿using System;
-using System.Reflection;
-using System.Windows.Forms;
-using RegexMASProviderLib.Common;
+﻿using RegexMASProviderLib.Common;
 using RegexMASProviderLib.Models;
 using RegexMASProviderLib.View;
 using Sdl.Desktop.IntegrationApi;
 using Sdl.Desktop.IntegrationApi.Extensions;
 using Sdl.Desktop.IntegrationApi.Interfaces;
 using Sdl.TranslationStudioAutomation.IntegrationApi;
+using System;
+using System.Reflection;
 
 namespace Capybara.EditorPlugin.RegexMASProvider
 {
@@ -50,7 +49,7 @@ namespace Capybara.EditorPlugin.RegexMASProvider
                 _regexPatternEntries.Save(regexFilePath);
                 _variables.Save(variableFilePath);
             };
-            
+
         }
 
 
@@ -76,10 +75,10 @@ namespace Capybara.EditorPlugin.RegexMASProvider
         }
 
 
-        private static readonly Lazy<RegexDataGridView> Control = 
+        private static readonly Lazy<RegexDataGridView> Control =
             new Lazy<RegexDataGridView>(() =>
         {
             return new RegexDataGridView();
-        });  
+        });
     }
 }

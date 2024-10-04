@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginPackage xmlns="http://www.sdl.com/Plugins/PluginPackage/1.0">
-  <PlugInName>Regex Match AutoSuggest Provider</PlugInName>
+  <PlugInName>Regex Match AutoSuggest Provider - Trados</PlugInName>
   <Version>2.9.0.0</Version>
-  <Description>Capybara.EditorPlugin.RegexMASProvider</Description>
-  <Author>Capybara Translation</Author>
-	<RequiredProduct name="TradosStudio" minversion="17.0" maxversion="17.9" />
+	<Description>
+		Regex Match AutoSuggest Provider - Trados, allows you to display AutoSuggest entries that match predefined regular expressions.
+		Credits:
+		This application was originally developed by Capybara Translation.
+		Further development and updates are being carried out by the Trados AppStore Team.
+	</Description>
+  <Author>Trados AppStore Team</Author>
+	<RequiredProduct name="TradosStudio" minversion="18.0" maxversion="18.9" />
   <Include>
     <File>RegexMASProviderLib.dll</File>
   </Include>

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using RegexMASProviderLib.Models;
+using Sdl.Desktop.IntegrationApi.Interfaces;
+using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
-using RegexMASProviderLib.Models;
-using Sdl.Desktop.IntegrationApi.Interfaces;
 
 namespace RegexMASProviderLib.View
 {
@@ -113,9 +113,9 @@ namespace RegexMASProviderLib.View
             }
             catch (Exception)
             {
-                
+
             }
-            
+
         }
 
         private void PasteToDGV(DataGridView dgv, PreviewKeyDownEventArgs e)
@@ -216,7 +216,7 @@ namespace RegexMASProviderLib.View
 
         private void enableSelectedRegexEntriesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var enable = (bool) ((ToolStripMenuItem) sender).Tag;
+            var enable = (bool)((ToolStripMenuItem)sender).Tag;
             var selectedRowIndices = regexPatternsDataGridView.SelectedCells
                 .OfType<DataGridViewCell>()
                 .Where(c => c.RowIndex >= 0)
@@ -234,7 +234,7 @@ namespace RegexMASProviderLib.View
 
         private void enableSelectedVariableEntriesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var enable = (bool) ((ToolStripMenuItem) sender).Tag;
+            var enable = (bool)((ToolStripMenuItem)sender).Tag;
             var selectedRowIndices = variablesDataGridView.SelectedCells
                 .OfType<DataGridViewCell>()
                 .Where(c => c.RowIndex >= 0)
@@ -248,6 +248,11 @@ namespace RegexMASProviderLib.View
                     entry.IsEnabled = enable;
                 }
             }
+        }
+
+        private void regexPatternsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

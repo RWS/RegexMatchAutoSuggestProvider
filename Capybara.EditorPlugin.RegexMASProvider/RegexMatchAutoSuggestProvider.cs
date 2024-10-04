@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using RegexMASProviderLib.Models;
+﻿using RegexMASProviderLib.Models;
 using Sdl.FileTypeSupport.Framework.BilingualApi;
 using Sdl.TranslationStudioAutomation.IntegrationApi;
 using Sdl.TranslationStudioAutomation.IntegrationApi.AutoSuggest;
 using Sdl.TranslationStudioAutomation.IntegrationApi.Extensions;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 
 namespace Capybara.EditorPlugin.RegexMASProvider
 {
@@ -33,6 +33,8 @@ namespace Capybara.EditorPlugin.RegexMASProvider
                 _listChangeNotifier = _viewPartController.ListChangeNotifier;
                 _listChangeNotifier.Changed += _listChangeNotifier_Changed;
             }
+
+            Icon = PluginResources.RegexMASProvider_Icon;
         }
 
         private void _listChangeNotifier_Changed(object sender, EventArgs e)
@@ -82,7 +84,7 @@ namespace Capybara.EditorPlugin.RegexMASProvider
             {
                 var text = string.Join("",
                     segmentPair.Source.AllSubItems.OfType<IText>().Select(txt => txt.Properties.Text));
-                var autoSuggestEntries = _regexPatternEntries.GetAutoSuggestEntries(text, _variables); 
+                var autoSuggestEntries = _regexPatternEntries.GetAutoSuggestEntries(text, _variables);
                 _candidates.AddRange(autoSuggestEntries.Select(e => e.AutoSuggestString).Distinct());
             }
         }

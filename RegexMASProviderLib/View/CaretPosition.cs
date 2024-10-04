@@ -85,15 +85,15 @@ namespace RegexMASProviderLib.View
         public static Point EvaluateCarePosition()
         {
             var guiInfo = new GUITHREADINFO();
-            guiInfo.cbSize = (uint) Marshal.SizeOf(guiInfo);
+            guiInfo.cbSize = (uint)Marshal.SizeOf(guiInfo);
 
             // Get GuiThreadInfo into guiInfo
             GetGUIThreadInfo(0, out guiInfo);
-            
+
             var caretPosition = new Point();
-            caretPosition.X = (int) guiInfo.rcCaret.Left;
-            caretPosition.Y = (int) guiInfo.rcCaret.Bottom;
-            
+            caretPosition.X = (int)guiInfo.rcCaret.Left;
+            caretPosition.Y = (int)guiInfo.rcCaret.Bottom;
+
             ClientToScreen(guiInfo.hwndCaret, out caretPosition);
 
             return caretPosition;

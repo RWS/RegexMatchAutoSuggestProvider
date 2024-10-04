@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using RegexMASProviderLib.Common;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using RegexMASProviderLib.Common;
 
 namespace RegexMASProviderLib.Models
 {
@@ -51,15 +51,15 @@ namespace RegexMASProviderLib.Models
             {
                 var variable = new Variable
                 {
-                    IsEnabled = (bool) varElem.Element("IsEnabled"),
-                    Name = (string) varElem.Element("Name")
+                    IsEnabled = (bool)varElem.Element("IsEnabled"),
+                    Name = (string)varElem.Element("Name")
                 };
                 foreach (var pairElem in varElem.Descendants("TranslationPair"))
                 {
                     variable.TranslationPairs.Add(new TranslationPair
                     {
-                        Source = (string) pairElem.Element("Source"),
-                        Target = (string) pairElem.Element("Target")
+                        Source = (string)pairElem.Element("Source"),
+                        Target = (string)pairElem.Element("Target")
                     });
                 }
                 Entries.Add(variable);

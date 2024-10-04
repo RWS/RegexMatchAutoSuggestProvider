@@ -30,11 +30,11 @@
         {
             this.tblRoot = new System.Windows.Forms.TableLayoutPanel();
             this.txtSource = new System.Windows.Forms.TextBox();
-            this.popupWindow = new RegexMASProviderLib.View.EvaluationPopupWindow();
-            this.regexDgv = new RegexMASProviderLib.View.RegexDataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnRun = new System.Windows.Forms.Button();
             this.btnShowRegexTester = new System.Windows.Forms.Button();
+            this.popupWindow = new RegexMASProviderLib.View.EvaluationPopupWindow();
+            this.regexDgv = new RegexMASProviderLib.View.RegexDataGridView();
             this.tblRoot.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,27 +55,64 @@
             this.tblRoot.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tblRoot.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblRoot.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tblRoot.Size = new System.Drawing.Size(1088, 1144);
+            this.tblRoot.Size = new System.Drawing.Size(1088, 1061);
             this.tblRoot.TabIndex = 0;
             // 
             // txtSource
             // 
             this.txtSource.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSource.Location = new System.Drawing.Point(3, 861);
+            this.txtSource.Location = new System.Drawing.Point(3, 798);
             this.txtSource.Multiline = true;
             this.txtSource.Name = "txtSource";
-            this.txtSource.Size = new System.Drawing.Size(876, 280);
+            this.txtSource.Size = new System.Drawing.Size(876, 260);
             this.txtSource.TabIndex = 2;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.btnRun, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnShowRegexTester, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(885, 798);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 260);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // btnRun
+            // 
+            this.btnRun.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRun.Location = new System.Drawing.Point(3, 3);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(194, 124);
+            this.btnRun.TabIndex = 0;
+            this.btnRun.Text = "Run";
+            this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+            // 
+            // btnShowRegexTester
+            // 
+            this.btnShowRegexTester.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnShowRegexTester.Location = new System.Drawing.Point(3, 133);
+            this.btnShowRegexTester.Name = "btnShowRegexTester";
+            this.btnShowRegexTester.Size = new System.Drawing.Size(194, 124);
+            this.btnShowRegexTester.TabIndex = 1;
+            this.btnShowRegexTester.Text = "Show Regex Tester";
+            this.btnShowRegexTester.UseVisualStyleBackColor = true;
+            this.btnShowRegexTester.Click += new System.EventHandler(this.btnShowRegexTester_Click);
             // 
             // popupWindow
             // 
             this.tblRoot.SetColumnSpan(this.popupWindow, 2);
             this.popupWindow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.popupWindow.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.popupWindow.Location = new System.Drawing.Point(3, 290);
+            this.popupWindow.Location = new System.Drawing.Point(3, 269);
             this.popupWindow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.popupWindow.Name = "popupWindow";
-            this.popupWindow.Size = new System.Drawing.Size(1082, 564);
+            this.popupWindow.Size = new System.Drawing.Size(1082, 522);
             this.popupWindow.TabIndex = 0;
             // 
             // regexDgv
@@ -86,51 +123,16 @@
             this.regexDgv.Location = new System.Drawing.Point(3, 4);
             this.regexDgv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.regexDgv.Name = "regexDgv";
-            this.regexDgv.Size = new System.Drawing.Size(1082, 278);
+            this.regexDgv.ShowRegexTester = false;
+            this.regexDgv.Size = new System.Drawing.Size(1082, 257);
             this.regexDgv.TabIndex = 3;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.btnRun, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnShowRegexTester, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(885, 861);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 280);
-            this.tableLayoutPanel1.TabIndex = 4;
-            // 
-            // btnRun
-            // 
-            this.btnRun.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRun.Location = new System.Drawing.Point(3, 3);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(194, 134);
-            this.btnRun.TabIndex = 0;
-            this.btnRun.Text = "Run";
-            this.btnRun.UseVisualStyleBackColor = true;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
-            // 
-            // btnShowRegexTester
-            // 
-            this.btnShowRegexTester.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnShowRegexTester.Location = new System.Drawing.Point(3, 143);
-            this.btnShowRegexTester.Name = "btnShowRegexTester";
-            this.btnShowRegexTester.Size = new System.Drawing.Size(194, 134);
-            this.btnShowRegexTester.TabIndex = 1;
-            this.btnShowRegexTester.Text = "Show Regex Tester";
-            this.btnShowRegexTester.UseVisualStyleBackColor = true;
-            this.btnShowRegexTester.Click += new System.EventHandler(this.btnShowRegexTester_Click);
+            this.regexDgv.Load += new System.EventHandler(this.regexDgv_Load);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 1144);
+            this.ClientSize = new System.Drawing.Size(1088, 1061);
             this.Controls.Add(this.tblRoot);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

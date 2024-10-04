@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using Microsoft.VisualBasic;
 
 namespace RegexMASProviderLib.Common
 {
@@ -12,7 +12,7 @@ namespace RegexMASProviderLib.Common
         {
             if (assembly == null)
             {
-                
+
                 assembly = Assembly.GetExecutingAssembly();
             }
             string name = assembly.GetName().Name;
@@ -37,13 +37,13 @@ namespace RegexMASProviderLib.Common
 
         public static string ReplaceFirst(this string text, string search, string replace)
         {
-          int pos = text.IndexOf(search);
-          if (pos < 0)
-          {
-            return text;
-          }
-          return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
+            int pos = text.IndexOf(search);
+            if (pos < 0)
+            {
+                return text;
+            }
+            return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
         }
-        
+
     }
 }

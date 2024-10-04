@@ -47,7 +47,7 @@ namespace RegexMASProviderLib.View
 
         private void suggestionsListBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            
+
             if (e.KeyData == Keys.Enter && CloseEventHandler != null)
             {
                 CloseEventHandler(sender, e);

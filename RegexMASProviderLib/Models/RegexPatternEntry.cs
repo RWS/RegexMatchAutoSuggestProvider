@@ -1,6 +1,6 @@
-﻿using System;
+﻿using RegexMASProviderLib.Common;
+using System;
 using System.Text.RegularExpressions;
-using RegexMASProviderLib.Common;
 
 namespace RegexMASProviderLib.Models
 {

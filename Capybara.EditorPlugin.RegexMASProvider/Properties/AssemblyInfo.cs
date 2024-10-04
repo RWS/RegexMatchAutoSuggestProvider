@@ -5,11 +5,15 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Capybara.EditorPlugin.RegexMASProvider")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription(
+    "Regex Match AutoSuggest Provider - Trados, allows you to display AutoSuggest entries that match predefined regular expressions." 
+    + "\nCredits:" 
+    + "\nThis application was originally developed by Capybara Translation." 
+    + "\nFurther development and updates are being carried out by the Trados AppStore Team.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Capybara.EditorPlugin.RegexMASProvider")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCompany("SDL Limited as part of the RWS Holdings Plc group of companies")]
+[assembly: AssemblyProduct("Regex Match AutoSuggest Provider - Trados")]
+[assembly: AssemblyCopyright("Copyright © 2011 - 2022 SDL Limited as part of the RWS Holdings Plc group of companies (\"RWS Group\").")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

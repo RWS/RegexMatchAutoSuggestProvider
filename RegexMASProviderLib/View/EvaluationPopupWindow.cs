@@ -1,11 +1,11 @@
-﻿using System;
+﻿using RegexMASProviderLib.Common;
+using RegexMASProviderLib.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using RegexMASProviderLib.Common;
-using RegexMASProviderLib.Models;
 
 namespace RegexMASProviderLib.View
 {
@@ -61,7 +61,7 @@ namespace RegexMASProviderLib.View
             var unmachedRight = text.Substring(unmatchedRightIndex);
 
             nodes.AddRange(NewLineToBr(unmatchedLeft));
-            nodes.Add(new XElement(Xhtml.span, 
+            nodes.Add(new XElement(Xhtml.span,
                 new XAttribute("class", "matched"),
                 NewLineToBr(matched)));
             nodes.AddRange(NewLineToBr(unmachedRight));
@@ -71,7 +71,7 @@ namespace RegexMASProviderLib.View
 
         private void lstEntries_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var item = ((ListBox) sender).SelectedItem as AutoSuggestEntry;
+            var item = ((ListBox)sender).SelectedItem as AutoSuggestEntry;
             if (item == null)
             {
                 return;

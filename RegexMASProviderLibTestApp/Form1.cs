@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using RegexMASProviderLib.Models;
+﻿using RegexMASProviderLib.Models;
 using RegexMASProviderLib.View;
+using System;
+using System.Windows.Forms;
 
 namespace RegexMASProviderLibTestApp
 {
@@ -63,6 +55,11 @@ namespace RegexMASProviderLibTestApp
         private void btnShowRegexTester_Click(object sender, EventArgs e)
         {
             regexDgv.ShowRegexTester = !regexDgv.ShowRegexTester;
+        }
+
+        private void regexDgv_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

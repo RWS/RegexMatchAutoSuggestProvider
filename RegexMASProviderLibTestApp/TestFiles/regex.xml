@@ -3,7 +3,7 @@
   <Settings>
     <RegexPatternEntries>
       <Entry>
-        <IsEnabled>false</IsEnabled>
+        <IsEnabled>true</IsEnabled>
         <Description>test</Description>
         <RegexPattern>(#month#) (\d{1,2}), (\d{4}) \((#dow#)\)</RegexPattern>
         <ReplacePattern>$4-$3-$2-$1</ReplacePattern>
@@ -15,7 +15,7 @@
         <ReplacePattern>in $1 vom $3. $2 $4 ($5) bis $7. $6 $8 ($9)</ReplacePattern>
       </Entry>
       <Entry>
-        <IsEnabled>false</IsEnabled>
+        <IsEnabled>true</IsEnabled>
         <Description></Description>
         <RegexPattern>#city#</RegexPattern>
         <ReplacePattern>$0</ReplacePattern>
