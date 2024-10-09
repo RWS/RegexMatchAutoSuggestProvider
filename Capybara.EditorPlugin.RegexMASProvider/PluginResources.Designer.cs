@@ -147,16 +147,6 @@ namespace Capybara.EditorPlugin.RegexMASProvider {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        public static System.Drawing.Icon RegexMASProvider_Icon {
-            get {
-                object obj = ResourceManager.GetObject("RegexMASProvider_Icon", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Show all regex-matched suggestions.
         /// </summary>
         public static string SuggestionsPopupWindowAction_Description {

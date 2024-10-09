@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Capybara.EditorPlugin.RegexMASProvider")]
+[assembly: AssemblyTitle("Capybara.EditorPlugin.RegexMASProvider.Tests")]
 [assembly: AssemblyDescription(
-    "Regex Match AutoSuggest Provider - Trados, allows you to display AutoSuggest entries that match predefined regular expressions." 
-    + "\nCredits:" 
-    + "\nThis application was originally developed by Capybara Translation." 
+    "Regex Match AutoSuggest Provider - Trados, allows you to display AutoSuggest entries that match predefined regular expressions."
+    + "\nCredits:"
+    + "\nThis application was originally developed by Capybara Translation."
     + "\nFurther development and updates are being carried out by the Trados AppStore Team.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SDL Limited as part of the RWS Holdings Plc group of companies")]
@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ca2cbbe4-f233-45d2-ab45-7759e1312067")]
+[assembly: Guid("6F8E773E-7B08-4866-A96A-C7BA81073D4F")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -36,4 +36,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.0.0.0")]
-[assembly: AssemblyFileVersion("3.0.0.0")]
+[assembly: AssemblyFileVersion("3.0.1.0")]

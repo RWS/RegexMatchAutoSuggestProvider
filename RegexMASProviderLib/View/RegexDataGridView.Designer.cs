@@ -134,7 +134,7 @@
             // 
             // regexPatternEntryBindingSource
             // 
-            this.regexPatternEntryBindingSource.DataSource = typeof(RegexMASProviderLib.Models.RegexPatternEntry);
+            this.regexPatternEntryBindingSource.DataSource = typeof(RegexMASProviderLib.DataAccess.RegexPatternEntry);
             this.regexPatternEntryBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.regexPatternEntryBindingSource_AddingNew);
             // 
             // mainTabControl
@@ -222,7 +222,7 @@
             // 
             // variableBindingSource
             // 
-            this.variableBindingSource.DataSource = typeof(RegexMASProviderLib.Models.Variable);
+            this.variableBindingSource.DataSource = typeof(RegexMASProviderLib.DataAccess.Variable);
             this.variableBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.variableBindingSource_AddingNew);
             // 
             // translationPairsDataGridView
@@ -256,7 +256,7 @@
             // 
             // translationPairBindingSource
             // 
-            this.translationPairBindingSource.DataSource = typeof(RegexMASProviderLib.Models.TranslationPair);
+            this.translationPairBindingSource.DataSource = typeof(RegexMASProviderLib.DataAccess.TranslationPair);
             this.translationPairBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.translationPairBindingSource_AddingNew);
             // 
             // regexTesterPage

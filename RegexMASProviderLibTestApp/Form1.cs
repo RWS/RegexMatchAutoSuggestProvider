@@ -1,4 +1,5 @@
-﻿using RegexMASProviderLib.Models;
+﻿using RegexMASProviderLib.DataAccess;
+using RegexMASProviderLib.Services;
 using RegexMASProviderLib.View;
 using System;
 using System.Windows.Forms;
@@ -10,6 +11,7 @@ namespace RegexMASProviderLibTestApp
         private RegexPatternEntries _regexPatternEntries;
         private Variables _variables;
         private ListChangeNotifier _listChangeNotifier;
+        private IAutoSuggestService _autoSuggestService = new AutoSuggestService();
 
         public string RegexFile
         {
@@ -24,18 +26,16 @@ namespace RegexMASProviderLibTestApp
         public Form1()
         {
             InitializeComponent();
-            _regexPatternEntries = new RegexPatternEntries();
-            _regexPatternEntries.Load(RegexFile);
-            _variables = new Variables();
-            _variables.Load(VariableFile);
+            _regexPatternEntries = new RegexPatternEntries(RegexFile);
+            _variables = new Variables(VariableFile);
             _listChangeNotifier = new ListChangeNotifier();
             regexDgv.Initialize(_regexPatternEntries, _variables, _listChangeNotifier);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _regexPatternEntries.Save(RegexFile);
-            _variables.Save(VariableFile);
+            _regexPatternEntries.Save();
+            _variables.Save();
         }
 
         private void btnRun_Click(object sender, EventArgs e)
@@ -46,10 +46,10 @@ namespace RegexMASProviderLibTestApp
                 return;
             }
 
-            var autoSuggestEntries = _regexPatternEntries.GetAutoSuggestEntries(sourceText, _variables);
+            var autoSuggestEntries = _autoSuggestService.GetAutoSuggestEntries(
+                sourceText, _regexPatternEntries.Entries, _variables.Entries);
             var popupContent = new PopupWindowContent(autoSuggestEntries);
             popupWindow.SetContent(popupContent);
-
         }
 
         private void btnShowRegexTester_Click(object sender, EventArgs e)

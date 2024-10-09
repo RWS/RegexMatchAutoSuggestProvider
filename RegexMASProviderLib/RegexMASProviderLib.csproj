@@ -56,12 +56,18 @@
   <ItemGroup>
     <Compile Include="Common\ModelBase.cs" />
     <Compile Include="Common\Utils.cs" />
+    <Compile Include="Extensions\VariableListExtension.cs" />
     <Compile Include="Models\AutoSuggestEntry.cs" />
+    <Compile Include="DataAccess\IDataStore.cs" />
+    <Compile Include="DataAccess\IRegexPatternDataStore.cs" />
+    <Compile Include="DataAccess\IVariableDataStore.cs" />
     <Compile Include="Models\ListChangeNotifier.cs" />
+    <Compile Include="DataAccess\RegexPatternDataStore.cs" />
     <Compile Include="Models\RegexPatternEntries.cs" />
     <Compile Include="Models\RegexPatternEntry.cs" />
     <Compile Include="Models\TranslationPair.cs" />
     <Compile Include="Models\Variable.cs" />
+    <Compile Include="DataAccess\VariableDataStore.cs" />
     <Compile Include="Models\Variables.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -69,6 +75,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\AutoSuggestService.cs" />
+    <Compile Include="Services\IAutoSuggestService.cs" />
     <Compile Include="View\BasePopupUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

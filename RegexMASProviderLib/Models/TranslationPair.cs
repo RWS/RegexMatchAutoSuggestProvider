@@ -1,6 +1,6 @@
 ﻿using RegexMASProviderLib.Common;
 
-namespace RegexMASProviderLib.Models
+namespace RegexMASProviderLib.DataAccess
 {
     public class TranslationPair : ModelBase
     {

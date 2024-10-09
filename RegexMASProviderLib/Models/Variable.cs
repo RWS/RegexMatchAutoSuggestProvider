@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace RegexMASProviderLib.Models
+namespace RegexMASProviderLib.DataAccess
 {
     public class Variable : ModelBase
     {

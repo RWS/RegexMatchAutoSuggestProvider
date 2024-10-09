@@ -1,5 +1,5 @@
 ﻿using RegexMASProviderLib.Common;
-using RegexMASProviderLib.Models;
+using RegexMASProviderLib.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;

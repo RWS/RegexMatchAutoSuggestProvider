@@ -1,4 +1,5 @@
-﻿using RegexMASProviderLib.Models;
+﻿using RegexMASProviderLib.DataAccess;
+using RegexMASProviderLib.Services;
 using Sdl.Desktop.IntegrationApi.Interfaces;
 using System;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace RegexMASProviderLib.View
         private Variables _variables;
         private ListChangeNotifier _listChangeNotifier;
         private TabPageManager _tabPageManager;
+        private IAutoSuggestService _autoSuggestService;
 
         public RegexDataGridView()
         {
@@ -27,6 +29,8 @@ namespace RegexMASProviderLib.View
             enableSelectedVariableEntriesToolStripMenuItem.Tag = true;
             disableSelectedVariableEntriesToolStripMenuItem.Tag = false;
             variablesDataGridView.ContextMenuStrip = variableContextMenuStrip;
+
+            _autoSuggestService = new AutoSuggestService();
         }
 
         private bool _showRegexTester;
@@ -204,7 +208,8 @@ namespace RegexMASProviderLib.View
                 return;
             }
 
-            var autoSuggestEntries = _regexPatternEntries.GetAutoSuggestEntries(sourceText, _variables);
+            var autoSuggestEntries = _autoSuggestService.GetAutoSuggestEntries(
+                sourceText, _regexPatternEntries.Entries, _variables.Entries);
             var popupContent = new PopupWindowContent(autoSuggestEntries);
             evaluationPopupWindow.SetContent(popupContent);
         }

@@ -2,7 +2,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace RegexMASProviderLib.Models
+namespace RegexMASProviderLib.DataAccess
 {
     public class RegexPatternEntry : ModelBase
     {

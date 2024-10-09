@@ -1,5 +1,5 @@
 ﻿using RegexMASProviderLib.Common;
-using RegexMASProviderLib.Models;
+using RegexMASProviderLib.DataAccess;
 using RegexMASProviderLib.View;
 using Sdl.Desktop.IntegrationApi;
 using Sdl.Desktop.IntegrationApi.Extensions;
@@ -14,7 +14,7 @@ namespace Capybara.EditorPlugin.RegexMASProvider
         Id = "RegexMatchAutoSuggestProviderViewPart",
         Name = "Plugin_Name",
         Description = "Plugin_Description",
-        Icon = "RegexMASProvider_Icon"
+        Icon = "regex_Logo1"
     )]
     [ViewPartLayout(typeof(EditorController), Dock = DockType.Bottom)]
     class RegexMatchAutoSuggestProviderViewPartController : AbstractViewPartController
@@ -31,14 +31,12 @@ namespace Capybara.EditorPlugin.RegexMASProvider
             // Load regex entries
             var regexFileExtension = ".settings.xml";
             var regexFilePath = Utils.GetSettingsPath(regexFileExtension, executingAssembly);
-            _regexPatternEntries = new RegexPatternEntries();
-            _regexPatternEntries.Load(regexFilePath);
+            _regexPatternEntries = new RegexPatternEntries(regexFilePath);
 
             // Load variable entries
             var variableFileExtension = ".variables.xml";
             var variableFilePath = Utils.GetSettingsPath(variableFileExtension, executingAssembly);
-            _variables = new Variables();
-            _variables.Load(variableFilePath);
+            _variables = new Variables(variableFilePath);
             _listChangeNotifier = new ListChangeNotifier();
             Control.Value.Initialize(_regexPatternEntries, _variables, _listChangeNotifier);
 
@@ -46,8 +44,8 @@ namespace Capybara.EditorPlugin.RegexMASProvider
             var editorController = SdlTradosStudio.Application.GetController<EditorController>();
             editorController.Closed += (sender, args) =>
             {
-                _regexPatternEntries.Save(regexFilePath);
-                _variables.Save(variableFilePath);
+                _regexPatternEntries.Save();
+                _variables.Save();
             };
 
         }

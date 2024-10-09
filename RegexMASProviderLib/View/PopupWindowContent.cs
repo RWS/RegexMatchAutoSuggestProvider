@@ -1,4 +1,4 @@
-﻿using RegexMASProviderLib.Models;
+﻿using RegexMASProviderLib.DataAccess;
 using System.Collections.Generic;
 
 namespace RegexMASProviderLib.View

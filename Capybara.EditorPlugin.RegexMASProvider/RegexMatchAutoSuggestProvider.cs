@@ -1,4 +1,5 @@
-﻿using RegexMASProviderLib.Models;
+﻿using RegexMASProviderLib.DataAccess;
+using RegexMASProviderLib.Services;
 using Sdl.FileTypeSupport.Framework.BilingualApi;
 using Sdl.TranslationStudioAutomation.IntegrationApi;
 using Sdl.TranslationStudioAutomation.IntegrationApi.AutoSuggest;
@@ -12,11 +13,12 @@ namespace Capybara.EditorPlugin.RegexMASProvider
 {
     [AutoSuggestProvider(Id = "RegexMatchAutoSuggestProvider", Name = "RegexMatchAutoSuggestProvider",
         Description = "AutoSuggest provider for copying the source words that match the specified regular expressions",
-        Icon = "RegexMASProvider_Icon")]
+        Icon = "regex_Logo1")]
     public class RegexMatchAutoSuggestProvider : AbstractAutoSuggestProvider
     {
         private List<string> _candidates;
         private RegexPatternEntries _regexPatternEntries;
+        private IAutoSuggestService _autoSuggestService = new AutoSuggestService();
         private Variables _variables;
         private ListChangeNotifier _listChangeNotifier;
         private RegexMatchAutoSuggestProviderViewPartController _viewPartController;
@@ -34,7 +36,7 @@ namespace Capybara.EditorPlugin.RegexMASProvider
                 _listChangeNotifier.Changed += _listChangeNotifier_Changed;
             }
 
-            Icon = PluginResources.RegexMASProvider_Icon;
+            Icon = PluginResources.regex_Logo1;
         }
 
         private void _listChangeNotifier_Changed(object sender, EventArgs e)
@@ -84,7 +86,8 @@ namespace Capybara.EditorPlugin.RegexMASProvider
             {
                 var text = string.Join("",
                     segmentPair.Source.AllSubItems.OfType<IText>().Select(txt => txt.Properties.Text));
-                var autoSuggestEntries = _regexPatternEntries.GetAutoSuggestEntries(text, _variables);
+                var autoSuggestEntries = _autoSuggestService.GetAutoSuggestEntries(
+                    text, _regexPatternEntries.Entries, _variables.Entries);
                 _candidates.AddRange(autoSuggestEntries.Select(e => e.AutoSuggestString).Distinct());
             }
         }

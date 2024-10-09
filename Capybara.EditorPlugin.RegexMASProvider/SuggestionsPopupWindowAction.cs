@@ -1,4 +1,5 @@
-﻿using RegexMASProviderLib.Models;
+﻿using RegexMASProviderLib.DataAccess;
+using RegexMASProviderLib.Services;
 using RegexMASProviderLib.View;
 using Sdl.Desktop.IntegrationApi;
 using Sdl.Desktop.IntegrationApi.Extensions;
@@ -21,12 +22,14 @@ namespace Capybara.EditorPlugin.RegexMASProvider
     {
         private PopupToolStripController _popupToolStrip;
         private SuggestionsPopupWindow _popupWindow;
+        private IAutoSuggestService _autoSuggestService;
 
         public override void Initialize()
         {
             _popupWindow = new SuggestionsPopupWindow();
             _popupToolStrip = new PopupToolStripController(_popupWindow);
             _popupWindow.CloseEventHandler += PopupWindow_CloseEventHandler;
+            _autoSuggestService = new AutoSuggestService();
             base.Initialize();
         }
 
@@ -107,7 +110,7 @@ namespace Capybara.EditorPlugin.RegexMASProvider
                     //        .Select(e => e.AutoSuggestString)
                     //        .Distinct()
                     //        .OrderByDescending(s => s.Length));
-                    return regexPatternEntries.GetAutoSuggestEntries(text, variables);
+                    return _autoSuggestService.GetAutoSuggestEntries(text, regexPatternEntries.Entries, variables.Entries);
                 })
                 .ContinueWith(task =>
                 {

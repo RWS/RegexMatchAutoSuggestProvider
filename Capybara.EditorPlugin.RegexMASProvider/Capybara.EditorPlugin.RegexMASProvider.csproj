@@ -126,7 +126,6 @@
     <None Include="Properties\DataSources\Capybara.EditorPlugin.RegexMASProvider.Models.TranslationPair.datasource" />
     <None Include="Properties\DataSources\Capybara.EditorPlugin.RegexMASProvider.Models.Variable.datasource" />
     <None Include="RegexMatchAutoSuggestProvider.snk" />
-    <None Include="Resources\R.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
