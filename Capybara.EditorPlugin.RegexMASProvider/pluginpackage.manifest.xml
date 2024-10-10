@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginPackage xmlns="http://www.sdl.com/Plugins/PluginPackage/1.0">
   <PlugInName>Regex Match AutoSuggest Provider - Trados</PlugInName>
-  <Version>3.0.0.0</Version>
+  <Version>3.0.0.1</Version>
 	<Description>
 		Regex Match AutoSuggest Provider - Trados, allows you to display AutoSuggest entries that match predefined regular expressions.
 		Credits:
