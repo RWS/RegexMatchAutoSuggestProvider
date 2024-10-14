@@ -42,7 +42,7 @@ namespace Capybara.EditorPlugin.RegexMASProvider.TellMeProvider
                 Keywords = new[]
                 {
                     "regex", "regex match", "regex autosuggest",
-                    "regex provider", "regex trados"
+                    "regex provider", "regex trados", "regex settings"
                 }
             }
         };

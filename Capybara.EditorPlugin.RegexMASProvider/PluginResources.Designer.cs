@@ -139,6 +139,16 @@ namespace Capybara.EditorPlugin.RegexMASProvider {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        public static System.Drawing.Icon Regex_Settings {
+            get {
+                object obj = ResourceManager.GetObject("Regex_Settings", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         public static System.Drawing.Icon Regex_SourceCode {
             get {
                 object obj = ResourceManager.GetObject("Regex_SourceCode", resourceCulture);

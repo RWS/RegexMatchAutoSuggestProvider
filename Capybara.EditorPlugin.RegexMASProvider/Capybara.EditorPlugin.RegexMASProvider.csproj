@@ -91,7 +91,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationInitializer.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,6 +113,7 @@
     <Compile Include="TellMeProvider\RegexMatchTellMeProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Regex_Settings.ico" />
     <None Include="Resources\regex_Logo.ico" />
     <None Include="Resources\regex_Logo.png" />
     <EmbeddedResource Include="PluginResources.resx">

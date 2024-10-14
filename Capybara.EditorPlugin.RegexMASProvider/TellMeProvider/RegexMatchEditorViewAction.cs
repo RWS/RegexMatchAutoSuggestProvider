@@ -15,14 +15,14 @@ namespace Capybara.EditorPlugin.RegexMASProvider.TellMeProvider
     {
         public RegexMatchEditorViewAction()
         {
-            Name = "Regex Match AutoSuggest Provider - Trados";
+            Name = "Regex Match AutoSuggest Provider - Trados Settings";
         }
 
         public override bool IsAvailable => SdlTradosStudio.Application.GetController<EditorController>().ActiveDocument != null;
 
         public override string Category => $"{PluginResources.Plugin_Name} results";
 
-        public override Icon Icon => PluginResources.regex_Logo1;
+        public override Icon Icon => PluginResources.Regex_Settings;
 
         public override void Execute()
         {
