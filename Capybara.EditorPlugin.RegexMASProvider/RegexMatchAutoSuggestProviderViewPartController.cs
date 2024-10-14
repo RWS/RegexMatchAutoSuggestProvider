@@ -24,6 +24,11 @@ namespace Capybara.EditorPlugin.RegexMASProvider
             return Control.Value;
         }
 
+        public void InitializeController()
+        {
+            Initialize();
+        }
+
         protected override void Initialize()
         {
             var executingAssembly = Assembly.GetExecutingAssembly();

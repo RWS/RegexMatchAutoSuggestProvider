@@ -1,6 +1,7 @@
 ﻿using RegexMASProviderLib.DataAccess;
 using RegexMASProviderLib.Services;
 using Sdl.FileTypeSupport.Framework.BilingualApi;
+using Sdl.FileTypeSupport.Framework.IntegrationApi;
 using Sdl.TranslationStudioAutomation.IntegrationApi;
 using Sdl.TranslationStudioAutomation.IntegrationApi.AutoSuggest;
 using Sdl.TranslationStudioAutomation.IntegrationApi.Extensions;
@@ -27,6 +28,9 @@ namespace Capybara.EditorPlugin.RegexMASProvider
         {
             _viewPartController =
                 SdlTradosStudio.Application.GetController<RegexMatchAutoSuggestProviderViewPartController>();
+
+            _viewPartController.InitializeController();
+
             if (_viewPartController != null)
             {
                 _regexPatternEntries = _viewPartController.RegexPatternEntries;
