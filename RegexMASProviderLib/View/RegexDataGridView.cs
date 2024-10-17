@@ -128,6 +128,7 @@ namespace RegexMASProviderLib.View
             {
                 return;
             }
+
             var rowIndex = dgv.CurrentCell.RowIndex;
             var colIndex = dgv.CurrentCell.ColumnIndex;
             var pasteText = Clipboard.GetText();
@@ -257,7 +258,7 @@ namespace RegexMASProviderLib.View
 
         private void regexPatternsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+         
         }
     }
 }

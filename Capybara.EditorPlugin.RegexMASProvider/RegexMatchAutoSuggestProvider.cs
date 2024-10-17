@@ -33,9 +33,6 @@ namespace Capybara.EditorPlugin.RegexMASProvider
 
             if (_viewPartController != null)
             {
-                _regexPatternEntries = _viewPartController.RegexPatternEntries;
-                _variables = _viewPartController.Variables;
-
                 _listChangeNotifier = _viewPartController.ListChangeNotifier;
                 _listChangeNotifier.Changed += _listChangeNotifier_Changed;
             }
@@ -46,6 +43,8 @@ namespace Capybara.EditorPlugin.RegexMASProvider
         private void _listChangeNotifier_Changed(object sender, EventArgs e)
         {
             Debug.WriteLine("List Changed");
+            _viewPartController.Variables.Save();
+            _viewPartController.RegexPatternEntries.Save();
             InitializeCandidates();
         }
 
@@ -58,19 +57,6 @@ namespace Capybara.EditorPlugin.RegexMASProvider
             }
             if (_viewPartController != null)
             {
-                if (_regexPatternEntries == null)
-                {
-                    _regexPatternEntries = _viewPartController.RegexPatternEntries;
-                }
-                if (_variables == null)
-                {
-                    _variables = _viewPartController.Variables;
-                }
-                if (_listChangeNotifier == null)
-                {
-                    _listChangeNotifier = _viewPartController.ListChangeNotifier;
-                    _listChangeNotifier.Changed += _listChangeNotifier_Changed;
-                }
                 InitializeCandidates();
             }
         }
@@ -91,7 +77,8 @@ namespace Capybara.EditorPlugin.RegexMASProvider
                 var text = string.Join("",
                     segmentPair.Source.AllSubItems.OfType<IText>().Select(txt => txt.Properties.Text));
                 var autoSuggestEntries = _autoSuggestService.GetAutoSuggestEntries(
-                    text, _regexPatternEntries.Entries, _variables.Entries);
+                    text, _viewPartController.RegexPatternEntries.Entries, 
+                    _viewPartController.Variables.Entries);
                 _candidates.AddRange(autoSuggestEntries.Select(e => e.AutoSuggestString).Distinct());
             }
         }
