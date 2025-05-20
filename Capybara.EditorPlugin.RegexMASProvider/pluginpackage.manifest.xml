@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginPackage xmlns="http://www.sdl.com/Plugins/PluginPackage/1.0">
   <PlugInName>Regex Match AutoSuggest Provider - Trados</PlugInName>
-  <Version>3.0.0.4</Version>
+  <Version>3.1.0.0</Version>
 	<Description>
 		Regex Match AutoSuggest Provider - Trados, allows you to display AutoSuggest entries that match predefined regular expressions.
 		Credits:
@@ -9,7 +9,7 @@
 		Further development and updates are being carried out by the Trados AppStore Team.
 	</Description>
   <Author>Trados AppStore Team</Author>
-	<RequiredProduct name="TradosStudio" minversion="18.0" maxversion="18.9" />
+	<RequiredProduct name="TradosStudio" minversion="18.1" maxversion="18.1.9" />
   <Include>
     <File>RegexMASProviderLib.dll</File>
   </Include>

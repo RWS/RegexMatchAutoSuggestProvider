@@ -1,35 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A1FA06AF-716F-49E6-9EAB-9345FA0EDA88}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
+    <TradosFolder>C:\Program Files (x86)\Trados\Trados Studio\Studio18</TradosFolder>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RegexMASProviderLib</RootNamespace>
-    <AssemblyName>RegexMASProviderLib</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -40,91 +16,23 @@
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Sdl.Desktop.IntegrationApi">
-      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.Desktop.IntegrationApi.dll</HintPath>
+      <HintPath>$(TradosFolder)\Sdl.Desktop.IntegrationApi.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\ModelBase.cs" />
-    <Compile Include="Common\Utils.cs" />
-    <Compile Include="Extensions\VariableListExtension.cs" />
-    <Compile Include="Models\AutoSuggestEntry.cs" />
-    <Compile Include="DataAccess\IDataStore.cs" />
-    <Compile Include="DataAccess\IRegexPatternDataStore.cs" />
-    <Compile Include="DataAccess\IVariableDataStore.cs" />
-    <Compile Include="Models\ListChangeNotifier.cs" />
-    <Compile Include="DataAccess\RegexPatternDataStore.cs" />
-    <Compile Include="Models\RegexPatternEntries.cs" />
-    <Compile Include="Models\RegexPatternEntry.cs" />
-    <Compile Include="Models\TranslationPair.cs" />
-    <Compile Include="Models\Variable.cs" />
-    <Compile Include="DataAccess\VariableDataStore.cs" />
-    <Compile Include="Models\Variables.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Services\AutoSuggestService.cs" />
-    <Compile Include="Services\IAutoSuggestService.cs" />
-    <Compile Include="View\BasePopupUserControl.cs">
+    <Compile Update="View\BasePopupUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\CaretPosition.cs" />
-    <Compile Include="View\EvaluationPopupWindow.cs">
+    <Compile Update="View\EvaluationPopupWindow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\EvaluationPopupWindow.Designer.cs">
-      <DependentUpon>EvaluationPopupWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\PopupToolStripController.cs" />
-    <Compile Include="View\PopupWindowContent.cs" />
-    <Compile Include="View\RegexDataGridView.cs">
+    <Compile Update="View\RegexDataGridView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\RegexDataGridView.Designer.cs">
-      <DependentUpon>RegexDataGridView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\SuggestionsPopupWindow.cs">
+    <Compile Update="View\SuggestionsPopupWindow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\SuggestionsPopupWindow.Designer.cs">
-      <DependentUpon>SuggestionsPopupWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Common\Xhtml.cs" />
-    <Compile Include="View\TabPageManager.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\EvaluationPopupWindow.resx">
-      <DependentUpon>EvaluationPopupWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\RegexDataGridView.resx">
-      <DependentUpon>RegexDataGridView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SuggestionsPopupWindow.resx">
-      <DependentUpon>SuggestionsPopupWindow.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="RegexMatchAutoSuggestProvider.snk" />
-    <None Include="Resources\base.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\base.html" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
